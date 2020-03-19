@@ -8,7 +8,7 @@ class App extends React.Component {
     tasks: [
       {
         id: 0,
-        text: 'asdasdasdasdasadsaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdasdasd',
+        text: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
         date: '2020-03-19',
         important: true,
         active: true,
@@ -16,7 +16,55 @@ class App extends React.Component {
       },
       {
         id: 1,
-        text: 'assdasdasd',
+        text: 'lorem lorem lorem lorem lorem lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 2,
+        text: 'lorem lorem lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 3,
+        text: 'lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 4,
+        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 5,
+        text: 'lorem lorem loremlorem lorem loremlorem lorem lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 6,
+        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 7,
+        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         date: '2020-03-19',
         important: true,
         active: true,
@@ -26,13 +74,25 @@ class App extends React.Component {
   }
 
   deleteTask = (id) => {
-    console.log('delete' + id);
-
+    let tasks = [...this.state.tasks];
+    tasks = tasks.filter(item => item.id !== id)
+    this.setState({
+      tasks,
+    })
   }
 
   changeTaskStatus = (id) => {
-    console.log('change' + id);
+    const tasks = [...this.state.tasks];
+    tasks.forEach(item => {
+      if (item.id === id) {
+        item.active = false
+        item.finishDate = new Date().toLocaleString()
+      }
+    })
 
+    this.setState({
+      tasks,
+    })
   }
   render() {
     return (
