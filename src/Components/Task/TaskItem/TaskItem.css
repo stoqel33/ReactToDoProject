@@ -1,0 +1,12 @@
+.taskItem{
+  display: grid;
+  grid-template-columns: 450px 200px 60px 50px;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.taskItem p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}

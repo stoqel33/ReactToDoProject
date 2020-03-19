@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AddTask from '../Task/AddTask/AddTask';
+import TaskList from '../Task/TaskList/TaskList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    tasks: [
+      {
+        id: 0,
+        text: 'asdasdasdasdasadsaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdasdasd',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+      {
+        id: 1,
+        text: 'assdasdasd',
+        date: '2020-03-19',
+        important: true,
+        active: true,
+        finishDate: '',
+      },
+    ]
+  }
+
+  deleteTask = (id) => {
+    console.log('delete' + id);
+
+  }
+
+  changeTaskStatus = (id) => {
+    console.log('change' + id);
+
+  }
+  render() {
+    return (
+      <div className="wrapperApp">
+        <h1>App</h1>
+        <AddTask />
+        <TaskList
+          tasks={this.state.tasks}
+          deleteTask={this.deleteTask}
+          doneTask={this.changeTaskStatus}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
