@@ -4,73 +4,30 @@ import AddTask from '../Task/AddTask/AddTask';
 import TaskList from '../Task/TaskList/TaskList';
 
 class App extends React.Component {
+  counter = 0;
   state = {
-    tasks: [
+    tasks: []
+  }
+
+  addTask = (text, date, important) => {
+    if (text.length > 2) {
+
+      const task =
       {
-        id: 0,
-        text: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
+        id: this.counter,
+        text,
+        date,
+        important,
         active: true,
         finishDate: '',
-      },
-      {
-        id: 1,
-        text: 'lorem lorem lorem lorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 2,
-        text: 'lorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 3,
-        text: 'lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 4,
-        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 5,
-        text: 'lorem lorem loremlorem lorem loremlorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 6,
-        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-      {
-        id: 7,
-        text: 'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
-        date: '2020-03-19',
-        important: true,
-        active: true,
-        finishDate: '',
-      },
-    ]
+      }
+      this.counter++;
+
+      this.setState((prevState) => ({
+        tasks: [...prevState.tasks, task]
+      }))
+      return true
+    }
   }
 
   deleteTask = (id) => {
@@ -98,7 +55,7 @@ class App extends React.Component {
     return (
       <div className="wrapperApp">
         <h1>App</h1>
-        <AddTask />
+        <AddTask addTask={this.addTask} />
         <TaskList
           tasks={this.state.tasks}
           deleteTask={this.deleteTask}
