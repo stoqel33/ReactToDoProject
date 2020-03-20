@@ -54,7 +54,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapperApp">
-        <h1>ToDoApp</h1>
+        <h1>To-Do List</h1>
         <AddTask addTask={this.addTask} />
         <TaskList
           tasks={this.state.tasks}

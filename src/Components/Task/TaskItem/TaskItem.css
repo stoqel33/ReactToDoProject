@@ -1,6 +1,6 @@
 .taskItem{
   display: grid;
-  grid-template-columns: 450px 200px 60px 50px;
+  /* grid-template-columns: 450px 200px 60px 50px; */
   align-items: center;
   padding: 10px;
   margin-bottom: 20px;
@@ -9,7 +9,7 @@
 
 .taskItemDone{
   display: grid;
-  grid-template-columns: 450px 200px 60px;
+  /* grid-template-columns: 450px 200px 60px; */
   align-items: center;
   padding: 10px;
   margin-bottom: 20px;
@@ -17,6 +17,14 @@
 }
 
 .taskItem p {
+  max-width: 80vw;
+  word-wrap: break-word;
+}
+
+.taskText {
+  max-width: 80vw;
+  text-align: left;
+  margin-bottom: 20px;
   word-wrap: break-word;
 }
 
@@ -24,6 +32,16 @@
   margin-bottom: 5px;
 }
 
+.done{
+  color: rebeccapurple;
+}
+
 .red{
   color: red;
+}
+
+.close{
+  position: relative;
+  height: 33px;
+  opacity: 0.3;
 }

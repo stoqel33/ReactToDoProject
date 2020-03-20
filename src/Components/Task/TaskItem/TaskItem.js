@@ -13,7 +13,7 @@ const TaskItem = ({ task, deleteTask, doneTask }) => {
         <button onClick={() => doneTask(task.id)}>
           Done
       </button>
-        <button onClick={() => deleteTask(task.id)}>
+        <button onClick={() => deleteTask(task.id)} className="close">
           X
       </button>
       </div>
@@ -22,14 +22,13 @@ const TaskItem = ({ task, deleteTask, doneTask }) => {
     return (
       <div>
         <div className="taskItemDone">
-          <p>{task.text} <i><small>({task.date})</small></i></p>
+          <p className="taskText">{task.text} <i><small>({task.date})</small></i></p>
           <div>
-            <p className="done">Done:</p>
-            {task.finishDate}
+            <p className="done">Done: {task.finishDate}</p>
           </div>
-          <button onClick={() => deleteTask(task.id)}>
+          <button onClick={() => deleteTask(task.id)} className="close">
             X
-        </button>
+          </button>
         </div>
       </div>
     );
