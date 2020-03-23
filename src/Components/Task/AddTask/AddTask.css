@@ -18,6 +18,9 @@
   background: transparent;
   outline: none;
 }
+.textInput::placeholder{
+  color: #ccc;
+}
 .infoAdd{
   display: flex;
   justify-content: center;

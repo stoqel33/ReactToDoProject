@@ -7,13 +7,13 @@ const TaskItem = ({ task, deleteTask, doneTask }) => {
     return (
       <div className="taskItem">
         {task.important ?
-          <p className='red'>{task.text}</p> : <p>{task.text}</p>
+          <p className='red'>{task.text.toUpperCase()}</p> : <p>{task.text}</p>
         }
-        <p>{task.date}</p>
-        <button onClick={() => doneTask(task.id)}>
+        <small>{task.date}</small>
+        <button onClick={() => doneTask(task.id)} className="doneBtn">
           Done
       </button>
-        <button onClick={() => deleteTask(task.id)} className="close">
+        <button onClick={() => deleteTask(task.id)} className="closeBtn">
           X
       </button>
       </div>
@@ -26,7 +26,7 @@ const TaskItem = ({ task, deleteTask, doneTask }) => {
           <div>
             <p className="done">Done: {task.finishDate}</p>
           </div>
-          <button onClick={() => deleteTask(task.id)} className="close">
+          <button onClick={() => deleteTask(task.id)} className="closeBtn">
             X
           </button>
         </div>

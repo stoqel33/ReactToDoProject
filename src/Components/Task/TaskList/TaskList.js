@@ -23,9 +23,12 @@ const TaskList = ({ tasks, deleteTask, doneTask }) => {
 
   return (
     <>
-      <div className="taskList">
-        {taskActive.sort()}
-      </div>
+      {tasks.length > 0 ?
+        <div className="taskList">
+          {taskActive.sort()}
+        </div>
+        : null
+      }
       {doneTasks.length > 5 ? <p>Last 5 tasks:</p> : null}
       <div>{taskDone.slice(0, 5)}</div>
     </>
